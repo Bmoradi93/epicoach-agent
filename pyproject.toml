@@ -1,0 +1,144 @@
+[project]
+name = "garminconnect"
+version = "0.2.28"
+description = "Python 3 API wrapper for Garmin Connect"
+authors = [
+    {name = "Ron Klinkien", email = "ron@cyberjunky.nl"},
+]
+dependencies = [
+    "garth>=0.5.13,<0.6.0",
+]
+# readme = "README.md"  # Commented out since README.md was deleted
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+]
+keywords=["garmin connect", "api", "garmin"]
+requires-python=">=3.10"
+[project.urls]
+"Homepage" = "https://github.com/cyberjunky/python-garminconnect"
+"Bug Tracker" = "https://github.com/cyberjunky/python-garminconnect/issues"
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pytest.ini_options]
+addopts = "--ignore=__pypackages__ --ignore-glob=*.yaml"
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+line_length = 79
+known_first_party = "garminconnect"
+
+[project.optional-dependencies]
+dev = [
+    "ipython",
+    "ipdb",
+    "ipykernel",
+    "pandas",
+    "matplotlib",
+]
+linting = [
+    "black",
+    "ruff",
+    "mypy",
+    "isort",
+    "types-requests",
+]
+testing = [
+    "coverage",
+    "pytest",
+    "pytest-vcr",
+]
+example = [
+    "readchar",
+]
+research = [
+    "garth>=0.5.13,<0.6.0",
+    "pytest",
+    "polars",
+    "pyarrow",
+    "duckdb",
+    "fitdecode",
+    "tenacity",
+    "numpy",
+    "scipy",
+    "jax",
+    "numpyro",
+    "arviz",
+    "h5netcdf",
+    "h5py",
+    "pandas",
+    "matplotlib",
+]
+
+[tool.pdm]
+distribution = true
+[tool.pdm.dev-dependencies]
+dev = [
+    "ipython",
+    "ipdb",
+    "ipykernel",
+    "pandas",
+    "matplotlib",
+]
+linting = [
+    "black",
+    "ruff",
+    "mypy",
+    "isort",
+    "types-requests",
+]
+testing = [
+    "coverage",
+    "pytest",
+    "pytest-vcr",
+]
+example = [
+    "readchar",
+]
+
+[tool.pixi.workspace]
+channels = ["conda-forge", "pypi"]
+platforms = ["linux-64"]
+
+[tool.pixi.pypi-dependencies]
+google-adk = "*"
+python-dotenv = "*"
+# garminconnect = { path = ".", editable = true }  # Commented out temporarily
+
+[tool.pixi.environments]
+default = { solve-group = "default" }
+dev = { features = ["dev"], solve-group = "default" }
+example = { features = ["example"], solve-group = "default" }
+linting = { features = ["linting"], solve-group = "default" }
+testing = { features = ["testing"], solve-group = "default" }
+research = { features = ["research"], solve-group = "default" }
+
+[tool.pixi.tasks]
+run-garmin-chat = "adk run garmin_agent"
+start-chat = "adk run garmin_agent"
+web-chat = "adk web ."
+export-garmin = "python -m garmin_lab.ingest.export"
+build-dataset = "python -m garmin_lab.ingest.build"
+discover-segments = "python -m garmin_lab.segments.discover"
+test-lab = "python -m pytest tests -q"
+
+[tool.pixi.dependencies]
+# Python version
+python = "3.13"
+# MCP dependencies (conda-forge)
+mcp = ">=1.12.3,<2"
+fastmcp = ">=2.10.0,<3"
+readchar = ">=4.2.1,<5"

@@ -1,0 +1,54 @@
+{
+  "workoutName": "EpiCoach back_loaded test",
+  "sportType": {
+    "sportTypeKey": "cycling"
+  },
+  "scheduled_day_offset": 6,
+  "plan_first_week_exp_trimp": [
+    0,
+    0,
+    0,
+    75,
+    175,
+    250,
+    0
+  ],
+  "steps": [
+    {
+      "type": "warmup",
+      "duration_min": 15,
+      "target": {
+        "hr_zone": 2
+      }
+    },
+    {
+      "type": "interval",
+      "segment": "fromme:Executioner Ascent:fwd",
+      "duration": "segment",
+      "target": {
+        "hr_bpm": [
+          157,
+          163
+        ]
+      }
+    },
+    {
+      "type": "recovery",
+      "duration_min": 5,
+      "target": {
+        "hr_zone": 1
+      }
+    },
+    {
+      "type": "interval",
+      "segment": "fromme:Expresso:fwd",
+      "duration": "segment",
+      "target": "self-selected"
+    },
+    {
+      "type": "cooldown",
+      "duration_min": 10
+    }
+  ],
+  "created_at": "2026-10-01T22:51:50+00:00"
+}

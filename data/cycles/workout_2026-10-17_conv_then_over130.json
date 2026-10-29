@@ -1,0 +1,109 @@
+{
+  "plan": "conv_then_over130",
+  "plan_first_week_exp_trimp": [
+    60,
+    108,
+    108,
+    72,
+    60,
+    72,
+    0
+  ],
+  "workouts": [
+    {
+      "workoutName": "EpiCoach conv_then_over130: fresh test",
+      "sportType": {
+        "sportTypeKey": "cycling"
+      },
+      "scheduled_day_offset": 0,
+      "steps": [
+        {
+          "type": "warmup",
+          "duration_min": 5,
+          "target": {
+            "hr_zone": 2
+          },
+          "note": "roll in from the car to the Trans Canada Trail east gate"
+        },
+        {
+          "type": "interval",
+          "segment": "burnaby:Trans Canada Trail:east->UniversityDr",
+          "duration": "lap_button",
+          "target": {
+            "hr_bpm": [
+              155,
+              165
+            ]
+          },
+          "note": "hold the band all the way up; lap where the Trans Canada Trail gravel meets University Drive"
+        },
+        {
+          "type": "recovery",
+          "duration_min": 3,
+          "target": {
+            "hr_zone": 1
+          }
+        },
+        {
+          "type": "interval",
+          "segment": "burnaby:Poplar->Nicoles:desc",
+          "duration": "lap_button",
+          "target": "self-selected",
+          "note": "enter via Poplar Trail; timed from the Nicoles junction to Pipeline"
+        },
+        {
+          "type": "cooldown",
+          "duration_min": 10
+        }
+      ]
+    },
+    {
+      "workoutName": "EpiCoach conv_then_over130: loaded test",
+      "sportType": {
+        "sportTypeKey": "cycling"
+      },
+      "scheduled_day_offset": 4,
+      "steps": [
+        {
+          "type": "warmup",
+          "duration_min": 5,
+          "target": {
+            "hr_zone": 2
+          },
+          "note": "roll in from the car to the Trans Canada Trail east gate"
+        },
+        {
+          "type": "interval",
+          "segment": "burnaby:Trans Canada Trail:east->UniversityDr",
+          "duration": "lap_button",
+          "target": {
+            "hr_bpm": [
+              155,
+              165
+            ]
+          },
+          "note": "hold the band all the way up; lap where the Trans Canada Trail gravel meets University Drive"
+        },
+        {
+          "type": "recovery",
+          "duration_min": 3,
+          "target": {
+            "hr_zone": 1
+          }
+        },
+        {
+          "type": "interval",
+          "segment": "burnaby:Poplar->Nicoles:desc",
+          "duration": "lap_button",
+          "target": "self-selected",
+          "note": "enter via Poplar Trail; timed from the Nicoles junction to Pipeline"
+        },
+        {
+          "type": "cooldown",
+          "duration_min": 10
+        }
+      ]
+    }
+  ],
+  "created_at": "2026-10-18T06:13:37+00:00"
+}

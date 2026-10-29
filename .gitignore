@@ -1,0 +1,45 @@
+# Secrets & credentials
+.env
+.env.*
+!.env.example
+
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Pixi / venv environments
+.pixi/
+.venv/
+*.pdm-build/
+
+# Google ADK runtime artifacts
+**/.adk/
+*.db
+
+# Garmin auth token store
+.garminconnect/
+
+# Downloaded activity data (contains personal fitness data)
+activity_*.gpx
+activity_*.tcx
+activity_*.csv
+activity_*.kml
+activity_*.zip
+activity_*.fit
+
+# Deliberately never published here (see README > Data availability):
+#   - raw per-second sensor samples
+#   - raw Garmin API activity-list dumps (contain name/profile/exact GPS)
+#   - the day-by-day personal health panel (sleep, HRV, stress, body battery...)
+data/dataset/samples.parquet
+data/dataset/daily.parquet
+data/dataset/garmin.duckdb
+data/raw/
+
+# OS / editor
+.DS_Store
+*.swp
